@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 // needle would be doing a job simular to node fetch but you can use common JS syntax
 const needle = require("needle");
+const apicache = require("apicache");
 
 // Env vars
 // For this to work we need a .env file
@@ -17,7 +18,11 @@ const API_BASE_URL = process.env.API_BASE_URL;
 const API_KEY_NAME = process.env.API_KEY_NAME;
 const API_KEY_VALUE = process.env.API_KEY_VALUE;
 
-router.get("/", async (req, res) => {
+// Init cache
+let cache = apicache.middleware;
+
+// If you look in Headers you'll see cache-control with "max-age=120" (2 minutes or 120 seconds)
+router.get("/", cache("2 minutes"), async (req, res) => {
   try {
     const params = new URLSearchParams({
       [API_KEY_NAME]: API_KEY_VALUE,
