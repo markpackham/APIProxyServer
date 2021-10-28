@@ -11,8 +11,9 @@ const needle = require("needle");
 // API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 // API_KEY_NAME = "appid"
 // API_KEY_VALUE = "[My Api Key]"
+// Example of an API query, http://localhost:5000/api?q=Chicago
 // When adding environment variables you need to restart the server
-const API_BASE_URL = process.env.APU_BASE_URL;
+const API_BASE_URL = process.env.API_BASE_URL;
 const API_KEY_NAME = process.env.API_KEY_NAME;
 const API_KEY_VALUE = process.env.API_KEY_VALUE;
 
