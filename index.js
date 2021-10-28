@@ -19,6 +19,9 @@ const limiter = rateLimit({
 app.use(limiter);
 app.set("trust proxy", 1);
 
+// Set static folder
+app.use(express.static("public"));
+
 // Routes
 // since we want ./routes/index we can leave out the "index" bit
 app.use("/api", require("./routes"));
