@@ -1,10 +1,3 @@
-// For this to work we need a .env file
-// API details from that file come from here https://openweathermap.org/current
-// Holds stuff like this
-// API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-// API_KEY_NAME = "appid"
-// API_KEY_VALUE = "[My Api Key]"
-
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
